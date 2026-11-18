@@ -50,14 +50,14 @@ void loop() {
   // una salida implica la desactivación de la otra.
   if (buttonState == HIGH) {
     // Botón PRESIONADO: rojo ON, verde OFF.
-    digitalWrite(ledRojo, HIGH);
-    digitalWrite(ledVerde, LOW);
-    Serial.println("PRESIONADO | Rojo: ON  | Verde: OFF");
-  } else {
-    // Botón LIBERADO: rojo OFF, verde ON.
     digitalWrite(ledRojo, LOW);
     digitalWrite(ledVerde, HIGH);
-    Serial.println("LIBERADO   | Rojo: OFF | Verde: ON");
+    Serial.println("PRESIONADO | Rojo: OFF  | Verde: ON");
+  } else {
+    // Botón LIBERADO: rojo OFF, verde ON.
+    digitalWrite(ledRojo, HIGH);
+    digitalWrite(ledVerde, LOW);
+    Serial.println("LIBERADO   | Rojo: ON | Verde: OFF");
   }
 
   // Espera bloqueante de 100 ms entre lecturas: limita la frecuencia
